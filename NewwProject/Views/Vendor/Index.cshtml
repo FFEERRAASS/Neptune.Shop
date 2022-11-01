@@ -1,0 +1,74 @@
+﻿@model IEnumerable<HandcraftFp>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/_Vendor.cshtml";
+}
+<br /><br />
+  <div class="white_shd full margin_bottom_30">
+                              <div class="full graph_head">
+                                 <div class="heading1 margin_0">
+                                    <h2>My Product</h2>
+                                 </div>
+                              </div>
+                              <div class="full gallery_section_inner padding_infor_info">
+                                 <div class="row">
+                                     @foreach(var item in Model){
+
+                                     
+                                    <div class="col-sm-4 col-md-3 margin_bottom_30">
+                                       <div class="column" style="max-height:300px;min-height:300px">
+                                          <a data-fancybox="gallery"><img class="img-responsive" src=@Url.Content("~/Images/"+@item.ImagePath) alt="#" /></a>
+                                       </div>
+                                       <div class="heading_section">
+                                          <h4>@item.Handcraft</h4>
+                                       </div>
+                                    </div>
+            }
+                                 </div>
+                              </div>
+                           </div>
+                <div class="midde_cont">
+                  <div class="container-fluid">
+                    
+                     <div class="row column1">
+                       
+                        
+                        <div class="col-md-6 col-lg-6">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-cloud-download green_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">@ViewBag.totalsmon</p>
+                                    <p class="head_couter">Total Revenue</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-6">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-comments-o red_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">@ViewBag.totalspro</p>
+                                    <p class="head_couter">Total Products</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+
+                         
+                        
+
+
+

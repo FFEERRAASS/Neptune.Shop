@@ -1,0 +1,90 @@
+﻿@model IEnumerable<UserloginFp>
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/_admin.cshtml";
+}
+@foreach(var item in Model){
+<div class="container" style="padding-top:20px">
+    <div class="main-body">
+    
+
+ 
+          <!-- /Breadcrumb -->
+   <div class="" >
+                <div class="col-md-12" style="border :2px solid #198754 ; border-radius:5px">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src=@Url.Content("~/Images/"+item.UserFkNavigation.ImagePath) asp-append-version="true" alt="Admin" class="rounded-circle" width="150">
+                    
+                  </div>
+                </div>
+              </div>
+           
+            </div>
+            <br>
+           
+            <br>
+                
+                            <br>
+                <div class="col-md-12" style="border :2px solid #198754 ; border-radius:5px">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name : </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      @item.UserFkNavigation.FirstName
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Last Name : </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                     @item.UserFkNavigation.LastName
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email : </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      @item.UserFkNavigation.Email
+                    </div>
+                  </div>
+                 <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Username : </h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      @item.Username
+                    </div>
+                  </div>
+                  <hr>
+                  
+                 
+                  <div class="row">
+                    <div class="col-sm-12">
+                           <a asp-action="Edit" class="btn btn-success" asp-route-id="@item.UserFkNavigation.UserId">Edit Profile</a>
+                           <a asp-action="Profile" class="btn btn-success">Back</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>
+               </div>
+             
+
+
+
+            </div>
+          </div>
+
+       }
+    
+

@@ -1,0 +1,215 @@
+﻿@model Tuple<IEnumerable<Email>,IEnumerable<ConmsgFp>>
+@{
+	Layout = "~/Views/_Admin.cshtml";
+
+    
+}
+
+<div class="midde_cont">
+                  <div class="container-fluid">
+                     <div class="row column_title">
+                        <div class="col-md-12">
+                           <div class="page_title">
+                              <h2>Dashboard</h2>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="row column1">
+                        <div class="col-md-6 col-lg-2">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-user yellow_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">@ViewBag.sumUser</p>
+                                    <p class="head_couter">Total Users</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-2">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-clock-o blue1_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">@ViewBag.sumVendor</p>
+                                    <p class="head_couter">Total Vendors</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-2">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-cloud-download green_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">@ViewBag.money</p>
+                                    <p class="head_couter">Total Revenue</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-2">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-rocket orange_color2"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">@ViewBag.sumProduct</p>
+                                    <p class="head_couter">Total Products</p>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-md-6 col-lg-2">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-close red_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">@ViewBag.userblocked</p>
+                                    <p class="head_couter">User Blocked</p>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                        <div class="col-md-6 col-lg-2">
+                           <div class="full counter_section margin_bottom_30">
+                              <div class="couter_icon">
+                                 <div> 
+                                    <i class="fa fa-fire blue1_color"></i>
+                                 </div>
+                              </div>
+                              <div class="counter_no">
+                                 <div>
+                                    <p class="total_no">@ViewBag.test</p>
+                                    <p class="head_couter">User Testimonial</p>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                        
+                     </div>
+                     <div class="row column3">
+                        <!-- testimonial -->
+                        <div class="col-md-6" >
+                           <div class="dash_blog"style="min-height:800px">
+                              <div class="dash_blog_inner">
+                                 <div class="dash_head">
+                                    <h3><span> Vendors Messages </span></h3>
+                                 </div>
+                                 <div class="list_cont">
+                                    <p>Last Five Message</p>
+                                 </div>
+                                 <div class="task_list_main">
+                                     
+                                    <ul class="task_list">
+                                @foreach (var item in Model.Item1)
+                                {
+                                                   <li> Subject: @item.EmailSubject <br>Message: @item.EmailMsg <br /> Name: @item.UserFkNavigation.FirstName</li>
+                                            
+                                }
+                                    </ul>
+                                 </div>
+                                 <div class="read_more">
+                                    <div class="center"><a class="main_bt read_bt" asp-action="contactV">To see more...</a></div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                        
+                          
+                      
+                        <div class="col-md-6">
+                           <div class="dash_blog" style="min-height:800px">
+                              <div class="dash_blog_inner">
+                                 <div class="dash_head">
+                                    <h3><span> Customer Messages </span></h3>
+                                 </div>
+                                 <div class="list_cont">
+                                    <p>Last Five Message</p>
+                                 </div>
+                                 <div class="task_list_main">
+                                    <ul class="task_list">
+                                        @foreach(var item in Model.Item2){
+                                       <li><a asp-action="contact" style="max-width:50px">@item.FullName <br> <b>@item.Subject</b></a></li>
+                                        }
+                                    </ul>
+                                 </div>
+                                 <div class="read_more">
+                                    <div class="center"><a class="main_bt read_bt" asp-action="contact">To see more...</a></div>
+                                 </div>
+                              </div>
+                           </div>
+
+                        </div>
+                        </div>
+                             </div>
+                        </div>
+                         <canvas id="myChart" width="400" height="100"></canvas>
+                        
+
+
+
+
+
+                        
+                      
+                       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+const ctx = document.getElementById('myChart');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Total Revuneu', 'Total Product', 'Total Vendors', 'Total Users','Total Product sold','Total UserBlocked'],
+        datasets: [{
+            label: 'General Stats',
+            data: [@ViewBag.money, @ViewBag.sumProduct,@ViewBag.sumVendor,@ViewBag.sumUser,@ViewBag.totalsold,@ViewBag.userblocked],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>

@@ -1,0 +1,49 @@
+﻿@model ReviewFp
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+        
+                    <div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Contact Us</div>
+                    <h2 class="mb-5">This is your space to evaluate our work and products</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.3s">
+                        <form asp-action="Testimonial">
+                            <div class="row g-3">
+                               
+                                <div class="col-12">
+                                    <div class="col-12">
+                                        <div class="form-floating">
+                                            <textarea asp-for="Review" class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                            <label for="message">Message</label>
+                                        </div>
+                                    </div>
+                                    <div >
+                                          <input asp-for="Rate" type="radio" id="5star" name="fav" value=5>
+                                          <label asp-for="Rate" for="5star">Excellent</label><br>
+                                          <input asp-for="Rate" type="radio" id="4star" name="fav" value=4>
+                                          <label asp-for="Rate" for="4star">Very Good</label><br>
+                                          <input asp-for="Rate" type="radio" id="3star" name="fav" value=3>
+                                          <label asp-for="Rate" for="3star">Good</label><br>
+                                          <input asp-for="Rate" type="radio" id="2star" name="fav" value=2>
+                                          <label asp-for="Rate" for="2star">Acceptable</label><br>
+                                          <input asp-for="Rate" type="radio" id="1star" name="fav" value=1>
+                                          <label asp-for="Rate" for="1star">Bad</label><br>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>

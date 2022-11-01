@@ -1,0 +1,114 @@
+﻿@model Tuple<IEnumerable<ReviewFp>,IEnumerable<CategoryFp>,IEnumerable<HandcraftFp>,IEnumerable<HomeFp>>
+@{
+    ViewData["Title"] = "Index1";
+    Layout = "~/Views/Shared/_homevisitor.cshtml";
+}
+
+
+
+
+ <div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;" >
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">@ViewBag.category.Homeparagraph1</div>
+
+                </div>
+                <br />
+                <div class="row g-4">
+            @foreach (var item in Model.Item2)
+            {
+                                <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" style="width:300px;margin:auto" > 
+                            <div class="team-item">
+                                <h5>@item.CategoryName</h5>
+                                <p class="mb-4"></p>
+
+                                                   <a asp-action="IndexCategory1" asp-controller="HandcraftFps" asp-route-id="@item.CategoryId"><img class="img-fluid rounded-circle w-100 mb-4" src=@Url.Content("~/Images/"+item.CategoryImage) style="max-height:300px;max-width:300px;width:150px;height:300px" asp-append-version="true" alt=""  ></a>
+
+                                <div class="d-flex justify-content-center">
+
+                                </div>
+                            </div>
+                        </div>
+            }
+                </div>
+            </div>
+        </div>
+
+
+
+<div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+<div class="d-inline-block border rounded-pill text-primary px-4 mb-3">@ViewBag.product.Homeparagraph1</div>
+                    <h2 class="mb-5">Our wonderful products</h2>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            @foreach (var item in Model.Item3)
+            {
+                            <div class="testimonial-item rounded p-4" style="width:300px;height:300px;margin-left:auto;margin-right:auto">
+
+
+                                               <img class="card-img rounded-circle  mb-4 text-black-50" src=@Url.Content("~/Images/"+item.ImagePath) asp-append-version="true" style="width:100px;height:100px;margin-left:auto;margin-right:auto" alt=""  >
+                                           <hr>
+                                                  <h5 style="font-size:20px;color:black">@item.Handcraft</h5>
+                                                        <b>@item.Sale $</b>
+                                                             <hr>
+                                                    <a asp-action="Index" asp-controller="HandcraftFps" class="btn btn-success" style="margin-left:2px">Go to Products</a>
+                                <div class="d-flex align-items-center">
+
+
+                                    <div class="ps-3">
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+            }
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">@ViewBag.test.Homeparagraph1</div>
+                    <h2 class="mb-5">@ViewBag.test.Homeparagraph2</h2>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+            @foreach (var item in Model.Item1)
+            {
+                        <div class="testimonial-item rounded p-4">
+                            <i class="fa fa-quote-left fa-2x text-primary mb-3"></i>
+                            <p>@item.Review</p>
+                            <div class="d-flex align-items-center">
+                                        <img class="img-fluid flex-shrink-0 rounded-circle" src=@Url.Content("~/Images/"+item.UserFkNavigation.ImagePath)>
+                                <div class="ps-3">
+                                    <h6 class="mb-1">@item.UserFkNavigation.FirstName</h6>
+                                    <small>@item.Rate</small>
+                                </div>
+                            </div>
+                        </div>
+            }
+
+                </div>
+            </div>
+        </div>
+        <div class="container-xxl bg-primary my-6 py-5 wow fadeInUp" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="owl-carousel client-carousel">
+            @foreach (var item in ViewBag.curs)
+            {
+                         <a href="@item.Homeparagraph1"><img class="img-fluid" src=@Url.Content("~/Images/"+item.Photo1) alt=""></a>
+            }
+         
+                </div>
+            </div>
+        </div>
+
+
+
+

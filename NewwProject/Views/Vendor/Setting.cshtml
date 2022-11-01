@@ -1,0 +1,122 @@
+﻿@model UserFp
+
+@{
+    ViewData["Title"] = "Setting";
+    Layout = "~/Views/_Vendor.cshtml";
+}
+
+
+
+
+<br /><br />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+<div class="row gutters">
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+
+</div>
+<form asp-action="Setting" asp-controller="Vendor" enctype="multipart/form-data" method="post">
+<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+<div class="card h-100">
+	<div class="card-body">
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<input type="hidden" asp-for="UserId" />
+				<h6 class="mb-2 text-primary">Personal Details</h6>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="FirstName" class="control-label"></label>
+					<input asp-for="FirstName" class="form-control" />
+					<span asp-validation-for="FirstName" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="LastName" class="control-label"></label>
+					<input asp-for="LastName" class="form-control" />
+					<span asp-validation-for="LastName" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="Email" class="control-label"></label>
+					<input asp-for="Email" class="form-control" />
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="CraftName" class="control-label"></label>
+					<input asp-for="CraftName" class="form-control" />
+					<span asp-validation-for="CraftName" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					 <label asp-for="ImageFile" class="control-label"></label>
+					 <input asp-for="ImageFile" class="form-control" />
+					 <span asp-validation-for="ImageFile" class="text-danger"></span>
+				</div>
+			</div>
+			
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" >
+				<div class="form-group">
+					<label class="control-label">Username</label>
+					<input type="text" name="Username" class="form-control" />
+
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label class="control-label">Password</label>
+					<input type="password" name="Password" class="form-control" />
+
+				</div>
+			</div> 
+
+		</div>
+		<div class="row gutters">
+			
+		</div>
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="text-right">
+					<br />
+					<input type="submit" value="Update" class="btn btn-primary" />
+			
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+
+
+
+

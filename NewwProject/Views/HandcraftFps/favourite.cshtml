@@ -1,0 +1,137 @@
+﻿@model IEnumerable<FavouriteFp>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<section class="h-100 h-custom" style="background-color: #eee;">
+  <div class="container  h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card">
+          <div class="card-body p-4">
+
+            <div >
+
+              <div >
+                <h5 class="mb-3"><a asp-action="Index" asp-controller="Home" class="text-body"><i
+                      class="fas fa-long-arrow-alt-left me-2"></i>Back To Home</a></h5>
+                <hr>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div>
+                    <p class="mb-1">Previous Purchases</p>
+                    <p class="mb-0">These are all your purchases</p>
+                  </div>
+                  
+                </div>
+                 @foreach(var item in Model){
+                <div class="card mb-3"> 
+                   
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between">
+                       
+
+                        
+                      <div class="d-flex flex-row align-items-center">
+                        <div>
+                          <img
+                            src=@Url.Content("~/Images/"+item.HandfkNavigation.ImagePath)
+                            class="img-fluid rounded-3" alt="Shopping item" style="width: 65px;">
+                        </div>
+                        <div class="ms-3">
+                          <h5>@item.HandfkNavigation.Handcraft</h5>
+@*                          <p class="small mb-0">Price: @item.DateShop</p>
+*@                        </div>
+                      </div>
+                      <div class="d-flex flex-row align-items-center">
+                        <div style="width: 120px; margin-right:30px">
+                            
+                                
+                              <div style="width: 100px;">
+@*                                      <h5 class="mb-0"><small>Quantity: @item.Quantity</small></h5>
+*@                            </div>
+
+                              
+                       
+
+                        </div>
+                        <div style="width: 120px;">
+                          <h5 class="mb-0">Price: @item.HandfkNavigation.Sale</h5>
+                        </div>
+                           
+                        <input type="submit" class="btn btn-outline-success" name="HandId" style="background-color:white" value="🛒" onclick="AddCarts(@item.Handfk)" /> 
+                            <div style="width: 45px;">
+                                                        @*                                      <h5 class="mb-0"><small>Quantity: @item.Quantity</small></h5>
+*@                            </div>
+                                 <div style="width: 80px;">
+                                          <h5 class="mb-0"><a asp-action="delfCart" class="btn btn-outline-success" value="Delete" asp-route-id="@item.FavId" >Delete</a></h5>
+                                    </div>
+                    </div>
+                                           
+                    </div>
+                         
+                  </div>
+                </div>
+                                }
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </div>
+                </section>
+
+            
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+ <script> type="text/javascript" href="http://code.jquery.com/jquery-1.10.2.js%22%3E" </script>
+
+
+    <script>
+        function AddCarts(Handfk) {
+
+            let id = Handfk;
+            console.log(id);
+            $.ajax({
+                url: "/HandcraftFps/AddCart1",
+                type: "POST",
+                data: { Handfk: id },
+                success: function (data) {
+
+                 if(data==0)
+                 {
+                     Swal.fire({
+                      title: 'Are you sure?',
+                      text: "you must be logged in!",
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#00B98E',
+                      cancelButtonColor: '#b90000',
+                      confirmButtonText: 'Yes, GO Login'
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                            window.location.href ="/Login/Loginuser";
+                      }
+                    })
+
+                 }
+                 else{
+                     console.log(data);
+                     Swal.fire(
+                      'Added successfully!',
+                      'You clicked the button!',
+                      'success'
+                    )
+
+                    }
+
+
+
+                }
+            })
+        }
+        </script>

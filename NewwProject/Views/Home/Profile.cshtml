@@ -1,0 +1,112 @@
+﻿@model UserFp
+@{
+    ViewData["Title"] = "Profile";
+    Layout = "~/Views/Shared/_Vendor.cshtml";
+}
+<style>
+    .footer {
+   position: fixed;
+   bottom: 10px;
+   text-align: center;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container">
+<div class="row gutters">
+<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+<div class="card h-100">
+	<div class="card-body">
+		<div class="account-settings">
+			<div class="user-profile">
+				<div class="user-avatar">
+					<img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Maxwell Admin">
+				</div>
+				<h5 class="user-name">Yuki Hayashi</h5>
+				<h6 class="user-email">yuki@Maxwell.com</h6>
+			</div>
+			<div class="about">
+				<h5>About</h5>
+				<p>I'm Yuki. Full Stack Designer I enjoy creating user-centric, delightful and human experiences.</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+<form asp-action="Profile" enctype="multipart/form-data">
+<div class="col-xl-9 col-lg-9 col-md-12 col-sm-12 col-12">
+<div class="card h-100">
+	<div class="card-body">
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="UserId" />
+				<h6 class="mb-2 text-primary">Personal Details</h6>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="FirstName" class="control-label"></label>
+					<input asp-for="FirstName" class="form-control" />
+					<span asp-validation-for="FirstName" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="LastName" class="control-label"></label>
+					<input asp-for="LastName" class="form-control" />
+					<span asp-validation-for="LastName" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="Email" class="control-label"></label>
+					<input asp-for="Email" class="form-control" />
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					 <label asp-for="ImageFile" class="control-label"></label>
+					 <input asp-for="ImageFile" class="form-control" />
+					 <span asp-validation-for="ImageFile" class="text-danger"></span>
+				</div>
+			</div>
+		</div>
+		<div class="row gutters">
+			
+		</div>
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="text-right">
+					<br />
+					<input type="submit" value="Update" class="btn btn-primary" />
+			
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</form>
+</div>
+</div>
+

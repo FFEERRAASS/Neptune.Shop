@@ -1,0 +1,148 @@
+﻿@model IEnumerable<Email>
+@{
+    ViewData["Title"] = "contactV";
+    Layout = "~/Views/_admin.cshtml";
+}
+<style>
+div.scroll
+{
+background-color:#f6f6f6;
+width:95%;
+height:600px;
+
+margin-left: 5%;
+padding: 1%;
+overflow:scroll;
+}
+
+
+</style>
+<hr />
+<br />
+<br />
+<div class="midde_cont"style="height:800px">
+                  <div class="container-fluid" style="height:800px">
+
+                     <!-- row -->
+                     <div class="row"style="height :800px" >
+                        <!-- table section -->
+                        <div class="col-md-12"style="height:800px">
+                           <div class="white_shd full margin_bottom_30"style="height:800px">
+                              <div class="full graph_head">
+                                 <div class="heading1 margin_0">
+                                    <h2>Email Box</h2>
+                                 </div>
+                              </div>
+                              <div class="full inbox_inner_section">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                       <div class="full padding_infor_info"style="height:100%">
+                                          <div class="mail-box">
+                                             <aside class="sm-side" >
+                                                <div class="user-head">
+                                                   <a class="inbox-avatar" href="javascript:;">
+                                                   <img  width="65"  src=@Url.Content("~/Images/"+@ViewBag.Image) alt="#" />
+                                                   </a>
+                                                   <div class="user-name">
+                                                      <h5><a>@ViewBag.Firstn</a></h5>
+
+                                                   </div>
+                                                </div>
+                                                <div class="inbox-body">
+
+                                                   <!-- Modal -->
+                                                </div>
+
+
+                                             </aside>
+
+                                             <aside class="lg-side">
+                                                <div class="inbox-head">
+                                                   
+
+                                                   <form asp-action="contactV" class="pull-right position search_inbox">
+                                                      <div class="input-append">
+                                                         <input type="text" class="sr-input" name="sname" placeholder="Search Mail By Name">
+                                                         <button class="btn sr-btn" type="submit"><i class="fa fa-search"></i></button>
+                                                      </div>
+                                                   </form>
+                                                
+                                           
+                                                </div>
+                                                <div class="scroll">
+                                                <div class="inbox-body" id="inbox">
+                                               
+
+                                                   </div>
+                                                   <table class="table table-inbox table-hover">
+                                                       <thead>
+                                                           <tr>
+                                                               <td></td>
+                                                               <td>Name</td>
+                                                               <td>Subject</td>
+                                                               <td>Message</td>
+                                                               <td>Reply</td>
+                                                           </tr>
+                                                       </thead>
+                                                      <tbody>
+                                              @foreach (var item in Model){
+
+                                              
+                                                             <tr class="unread">
+                                                                <td class="inbox-small-cells">
+                                                                   <div class="custom-control custom-checkbox">
+                                                                      
+                                                                   </div>
+
+                                                                </td>
+
+                                                                <td class="view-message  inbox-small-cells">@item.UserFkNavigation.FirstName</td>
+                                                                <td class="view-message ">@item.EmailSubject</td>
+                                                                <td class="view-message  dont-show">@item.EmailMsg</td>
+                                                                
+                                                                <td> <a asp-action="reply" asp-route-id=@item.UserFk><i class="fa fa-reply green_color"></i></a></td>
+                                                                
+
+                                                                 </tr>
+                                                    }
+
+                                                      </tbody>
+                                                   </table>
+                                                   </div>
+                                                   <div class="container-xxl py-6">
+         
+        </div>
+                                                   <div class="container-xxl py-6">
+
+                                                </div>
+                                             </aside>
+
+
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                         </div>
+                          </div>
+                           </div>
+
+                                   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+ <script> type="text/javascript" href="http://code.jquery.com/jquery-1.10.2.js%22%3E" </script>
+
+
+    <script>
+        function msg() {
+
+            Swal.fire(
+    'Done Successfully',
+  'We will reply as soon as possible!',
+  'success'
+)
+        }
+        </script>
+

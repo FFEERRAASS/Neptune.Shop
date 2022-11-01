@@ -1,0 +1,145 @@
+﻿@model UserFp
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/_admin.cshtml";
+}
+
+
+<div class="container">
+<div class="row gutters">
+@*<div class="col-xl-3 col-lg-3 col-md-12 col-sm-12 col-12">
+<div class="card h-100">
+	<div class="card-body">
+		<div class="account-settings">
+			<div class="user-profile">
+				<div class="card-img rounded-circle">
+								
+				<img src=@Url.Content("~/Images/"+Model.ImagePath) asp-append-version="true" width="400px" height="400px" style="text-align:center"/>
+				<br /><hr />
+				</div>
+				<h5 style="color:#00B98E" class="user-name">@Html.DisplayFor(modelItem => Model.FirstName)</h5>
+				<h5 style="color:#00B98E" class="user-email">@Html.DisplayFor(modelItem => Model.LastName)</h5>
+				<h6 style="color:#00B98E" class="user-email">@Html.DisplayFor(modelItem => Model.Email)</h6>
+				<h6 style="color:#00B98E" class="user-email">@Html.DisplayFor(modelItem => Model.CraftName)</h6>
+			</div>
+			<div style="color:#00B98E" class="about">
+				
+				<p style="color:#00B98E" >This is your private data.</p>
+			</div>
+		</div>
+	</div>
+	
+</div>
+<br /><br />
+</div>*@
+
+<form asp-action="Edit" enctype="multipart/form-data">
+	<br /><br />
+<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+<div class="card h-100">
+	<div class="card-body">
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+				<input type="hidden" asp-for="UserId" />
+				<h6 class="mb-2 text-primary">Personal Details</h6>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+				<label asp-for="FirstName" class="control-label"> First Name</label>
+				<input asp-for="FirstName" class="form-control" />
+				<span asp-validation-for="FirstName" class="text-danger"></span>
+		
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="LastName" class="control-label"> Last Name </label>
+				<input asp-for="LastName" class="form-control" />
+				<span asp-validation-for="LastName" class="text-danger"></span>
+				</div>
+			</div>
+			
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					 <label asp-for="Email" class="control-label"></label>
+					<input asp-for="Email" class="form-control" />
+					<span asp-validation-for="Email" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="CraftName" class="control-label"></label>
+					<input asp-for="CraftName" class="form-control" />
+					<span asp-validation-for="CraftName" class="text-danger"></span>
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label asp-for="ImageFile" class="control-label"></label>
+					<input asp-for="ImageFile" class="form-control" />
+					<span asp-validation-for="ImageFile" class="text-danger"></span>
+				</div>
+			</div>
+				<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12" >
+				<div class="form-group">
+					<label class="control-label">Username</label>
+					<input type="text" name="Username" class="form-control" />
+
+				</div>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label class="control-label">Old Password</label>
+					<input type="password" autocomplete="off" name="oldPassword" class="form-control" />
+
+				</div>
+			</div> 
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<div class="form-group">
+					<label class="control-label">Password</label>
+					<input type="password" autocomplete="off" name="Password" class="form-control" />
+
+				</div>
+			</div> 
+			<br />
+			<br /><br />
+			<div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+				<label  class="control-label">Gender</label><br />
+				<div class="form-group" style="border:1px solid #ced4da;border-radius:3px">
+					
+					<label for="male" class="control-label">Male</label>
+					<input asp-for="Gender" type="radio" id="male" name="fav" value=0>
+					<label for="female" class="control-label">Female</label>
+					<input asp-for="Gender" type="radio" id="female" name="fav" value=1>
+					<span asp-validation-for="Gender" class="text-danger"></span>
+				</div>
+			</div>
+		
+							
+		</div>
+		<div class="row gutters">
+
+		</div>
+		<div class="row gutters">
+			<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+				<div class="text-right">
+					<br />
+					<input type="submit" value="Update" class="btn btn-primary" />
+					<br />
+					<br />
+					<a asp-action="Profile" class="btn btn-success">Back</a>
+				</div>
+			</div>
+		</div>
+						@Html.ValidationSummary()
+	</div>
+</div>
+</div>
+		
+</form>
+
+</div>
+</div>
+
+ 

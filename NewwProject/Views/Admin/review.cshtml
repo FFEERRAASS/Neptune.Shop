@@ -1,0 +1,51 @@
+﻿@model IEnumerable<ReviewFp>
+@{
+    ViewData["Title"] = "review";
+    Layout = "~/Views/_admin.cshtml";
+}
+<style>
+    .footer {
+   position: fixed;
+   bottom: 10px;
+   text-align: center;
+}
+</style>
+<div class="row column1">
+    @foreach(var item in Model){
+
+    
+     <div class="col-md-6 col-lg-4">
+        <div class="full white_shd margin_bottom_30">
+           <div class="info_people">
+              <div class="p_info_img">
+                 <img src=@Url.Content("~/Images/"+item.UserFkNavigation.ImagePath) asp-append-version="true" />
+              </div>
+              <div class="user_info_cont">
+                 <h4>@item.UserFkNavigation.FirstName</h4>
+                 <p>@item.Review</p>
+                 <p class="p_status">@item.Rate / 5</p>
+              </div>
+                      <a asp-action="acceptt" asp-controller="Admin" asp-route-id="@item.ReviewId" onclick="acp()" class="btn btn-success" >Accept</a>
+           </div>
+        </div>
+     </div>
+    }
+</div>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script> type="text/javascript" href="http://code.jquery.com/jquery-1.10.2.js%22%3E" </script>
+
+
+    <script>
+        function acp() {
+
+            Swal.fire(
+    'Done Successfully',
+  'Neptune Shop',
+  'success'
+)
+        }
+        </script>

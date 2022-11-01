@@ -1,0 +1,208 @@
+﻿@model NewwProject.Models.HomeFp
+
+@{
+    Layout = "~/Views/_admin.cshtml";
+}
+
+@*<style>
+    .footer {
+   position: fixed;
+   bottom: 10px;
+   text-align: center;
+}
+</style>*@
+<br /><br /><br /><br />
+<div class="container-xxl py-6" >
+            <div class="container" >
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;" >
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3"> </div>
+                    <h2 class="mb-5" style="color:forestgreen">Create a new Information</h2>
+                </div>
+                <div class="row justify-content-center" >
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                        <form asp-action="Edit" enctype="multipart/form-data"  >
+                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                             <input type="hidden" asp-for="HomeId" />
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-input">
+                                        <br />
+                                         <label asp-for="Homeparagraph1" class="control-label">Home Paragraph 1</label>
+                                             <input asp-for="Homeparagraph1" class="form-control" />
+                                             <span asp-validation-for="Homeparagraph1" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-input">
+                                                        <br />
+                                                      <label asp-for="Homeparagraph2" class="control-label">Home Paragraph 2</label>
+                                                        <input asp-for="Homeparagraph2" class="form-control" />
+                                                        <span asp-validation-for="Homeparagraph2" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-6">
+                                                    <div class="form-input">
+                                                        <br />
+                                                       <label asp-for="Homeparagraph3" class="control-label">Home Paragraph 3</label>
+                                                        <input asp-for="Homeparagraph3" class="form-control" />
+                                                        <span asp-validation-for="Homeparagraph3" class="text-danger"></span>
+                                                                            </div>
+                                                </div>
+                                                 <div class="col-md-6">
+                                                    <div class="form-input">
+                                                        <br />
+                                                      <label asp-for="Location1" class="control-label">Location 1</label>
+                                                        <input asp-for="Location1" class="form-control" />
+                                                        <span asp-validation-for="Location1" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-input">
+                                                        <br />
+                                                       <label asp-for="Location2" class="control-label">Location 2</label>
+                                                         <input asp-for="Location2" class="form-control" />
+                                                         <span asp-validation-for="Location2" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-6">
+                                                    <div class="form-input">
+                                                        <br />
+                                                      <label asp-for="Email" class="control-label">Email</label>
+                                                        <input asp-for="Email" class="form-control" />
+                                                        <span asp-validation-for="Email" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-6">
+                                                    <div class="form-input">
+                                                        <br />
+                                                     <label asp-for="ImageFile" class="control-label">Image</label>
+                                                        <input asp-for="ImageFile" class="form-control" />
+                                                        <span asp-validation-for="ImageFile" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-input">
+                                                        <br />
+                                                      <label asp-for="Footerparagraph2" class="control-label">Footer Paragraph 1</label>
+                                                        <input asp-for="Footerparagraph2" class="form-control" />
+                                                        <span asp-validation-for="Footerparagraph2" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-6">
+                                                    <div class="form-input">
+                                                        <br />
+                                                     <label asp-for="Footerparagraph3" class="control-label">Footer Paragraph 2</label>
+                                                     <input asp-for="Footerparagraph3" class="form-control" />
+                                                     <span asp-validation-for="Footerparagraph3" class="text-danger"></span>
+                                                    </div>
+                                                </div>
+
+
+
+                                <div class="col-12">
+                                    <input type="submit" value="Save" style="width:100%" class="btn btn-success" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<br /><br /><br /><br /><br />
+<div>
+    <a class="btn btn-success" asp-action="Index">Back to List</a>
+</div>
+@*<h4>HomeFp</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="HomeId" />
+            <div class="form-group">
+                <label asp-for="Homeparagraph1" class="control-label">Home Paragraph 1</label>
+                <input asp-for="Homeparagraph1" class="form-control" />
+                <span asp-validation-for="Homeparagraph1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Homeparagraph2" class="control-label">Home Paragraph 2</label>
+                <input asp-for="Homeparagraph2" class="form-control" />
+                <span asp-validation-for="Homeparagraph2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Homeparagraph3" class="control-label">Home Paragraph 3</label>
+                <input asp-for="Homeparagraph3" class="form-control" />
+                <span asp-validation-for="Homeparagraph3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location1" class="control-label">Location 1</label>
+                <input asp-for="Location1" class="form-control" />
+                <span asp-validation-for="Location1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Location2" class="control-label">Location 2</label>
+                <input asp-for="Location2" class="form-control" />
+                <span asp-validation-for="Location2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ImageFile" class="control-label">Image</label>
+                <input asp-for="ImageFile" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>*@
+            @*<div class="form-group">
+                <label asp-for="Photo2" class="control-label"></label>
+                <input asp-for="Photo2" class="form-control" />
+                <span asp-validation-for="Photo2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo3" class="control-label"></label>
+                <input asp-for="Photo3" class="form-control" />
+                <span asp-validation-for="Photo3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo4" class="control-label"></label>
+                <input asp-for="Photo4" class="form-control" />
+                <span asp-validation-for="Photo4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo5" class="control-label"></label>
+                <input asp-for="Photo5" class="form-control" />
+                <span asp-validation-for="Photo5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo6" class="control-label"></label>
+                <input asp-for="Photo6" class="form-control" />
+                <span asp-validation-for="Photo6" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Photo7" class="control-label"></label>
+                <input asp-for="Photo7" class="form-control" />
+                <span asp-validation-for="Photo7" class="text-danger"></span>
+            </div>*@
+            @*<div class="form-group">
+                <label asp-for="Footerparagraph2" class="control-label">Footer Paragraph 1</label>
+                <input asp-for="Footerparagraph2" class="form-control" />
+                <span asp-validation-for="Footerparagraph2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Footerparagraph3" class="control-label">Footer Paragraph 2</label>
+                <input asp-for="Footerparagraph3" class="form-control" />
+                <span asp-validation-for="Footerparagraph3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+*@

@@ -1,0 +1,85 @@
+﻿@model NewwProject.Models.CategoryFp
+
+@{
+    Layout = "~/Views/_admin.cshtml";
+}
+<style>
+    .footer {
+   position: fixed;
+   bottom: 10px;
+   text-align: center;
+}
+</style>
+
+<br /><br /><br /><br />
+<div class="container-xxl py-6" >
+            <div class="container" >
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;" >
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3"> </div>
+                    <h2 class="mb-5" style="color:forestgreen">Edit a Category</h2>
+                </div>
+                <div class="row justify-content-center" >
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                        <form asp-action="Edit" asp-controller="CategoryFps" enctype="multipart/form-data" method="post" >
+                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                             <input type="hidden" asp-for="CategoryId" />
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                         <label asp-for="CategoryName" class="control-label"> Category Name </label><br /><br />
+                                         <input asp-for="CategoryName"  class="form-control" />
+                                         <span asp-validation-for="CategoryName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-input">
+                                        <br />
+                                       <label asp-for="ImageFile" class="control-label">Image File</label><br />
+                                        <input asp-for="ImageFile" class="form-input" />
+                                         <span asp-validation-for="ImageFile" class="text-danger"></span>
+                                    </div>
+                                </div>
+                         
+                               
+                                <div class="col-12">
+                                    <input type="submit" value="Save" style="width:100%" class="btn btn-success" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+@*<div class="row" style="position:absolute;top:50%;bottom:50">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CategoryId" />
+            <div class="form-group">
+                <label  class="control-label">Category Name</label>
+                <input asp-for="CategoryName" class="form-control" />
+                <span asp-validation-for="CategoryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">Category Image</label>
+                <input asp-for="ImageFile" class="form-control" />
+                <span asp-validation-for="ImageFile" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-success">Back to List</a>
+</div>
+
+*@
+<br /><br /><br /><br /><br />
+<div>
+    <a class="btn btn-success" asp-action="Index">Back to List</a>
+</div>
+

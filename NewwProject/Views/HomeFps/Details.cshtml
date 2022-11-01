@@ -1,0 +1,114 @@
+﻿@model NewwProject.Models.HomeFp
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/_admin.cshtml";
+}
+
+<style>
+    .footer {
+   position: fixed;
+   bottom: 10px;
+   text-align: center;
+}
+</style>
+<div>
+    <h4>HomeFp</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Homeparagraph1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Homeparagraph1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Homeparagraph2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Homeparagraph2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Homeparagraph3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Homeparagraph3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Location1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Location1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Location2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Location2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Photo1)
+        </dd>
+       @* <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Photo2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Photo3)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo4)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Photo4)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo5)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Photo5)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo6)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Photo6)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Photo7)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Photo7)
+        </dd>*@
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Footerparagraph2)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Footerparagraph2)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Footerparagraph3)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Footerparagraph3)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.HomeId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

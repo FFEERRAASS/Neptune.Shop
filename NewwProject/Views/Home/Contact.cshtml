@@ -1,0 +1,60 @@
+﻿@model NewwProject.Models.ConmsgFp
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<img src="https://i.pinimg.com/564x/a0/d5/9d/a0d59d6df1467005138869b161e7f9d1.jpg" alt="fefras" style="position:absolute;bottom:100px;right:55px" width="150" height="150" />
+
+<img src="https://i.pinimg.com/736x/8f/be/40/8fbe406632d7940e5e75db7b28e6cbc0.jpg" alt="fefras" style="position:absolute;bottom:10px;left:55px" width="150" height="150" />
+
+<div class="container-xxl py-6">
+            <div class="container">
+                <div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Contact Us</div>
+                    <h2 class="mb-5">If You Have Any Query, Please Feel Free Contact Us</h2>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                        <form asp-action="Contact">
+                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                         <label asp-for="FullName" class="control-label"> Full Name </label><br /><br />
+                                         <input asp-for="FullName"  class="form-control" />
+                                         <span asp-validation-for="FullName" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                       <label asp-for="Email" class="control-label">Email</label><br /><br />
+                                        <input asp-for="Email" class="form-control" />
+                                         <span asp-validation-for="Email" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <label asp-for="Subject" class="control-label">Subject</label><br /><br />
+                                        <input asp-for="Subject" class="form-control" />
+                                        <span asp-validation-for="Subject" class="text-danger"></span>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-floating">
+                                        <label asp-for="Msg" class="control-label">Message</label><br /><br />
+                                        <input asp-for="Msg" class="form-control"  />
+                                        <span asp-validation-for="Msg" class="text-danger"></span>
+                                       
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <input type="submit" value="Send" style="width:100%" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+                                        

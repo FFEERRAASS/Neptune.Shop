@@ -1,0 +1,159 @@
+﻿@model IEnumerable<NewwProject.Models.HandcraftFp>
+
+@{
+    ViewData["Title"] = "search1";
+    Layout = "~/Views/Shared/_homevisitor.cshtml";
+}
+
+
+
+
+<div class="container my-sm-5 border p-0 bg-sec-light"> 
+    <div id="content">
+        <div class="bg-light p-2 px-md-4 px-3 shadow-sm">
+            <div class="d-flex align-items-center"> 
+            <div id="navigator" class="text-primary"></div> 
+        </div> 
+        </div>
+        <div class="d-sm-flex align-items-sm-center py-sm-3 px-md-3 location"> 
+            <form asp-action="search" asp-controller="HandCraftFps" method="post" style="display:flex">
+            <input type="text" name="name" placeholder="Name Product" class=" mx-md-2 mx-sm-1 mx-3 my-sm-0 my-2 form-control" style="width:300px" > 
+            <input type="submit" value="search" class="btn" style="background-color:#00B98E;color:white" > 
+            </form>
+        </div> 
+        <div class="d-sm-flex"> <div class="me-sm-2"> 
+     </div>
+            <div class="container">
+                @*<div class="mx-auto text-center wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <div class="d-inline-block border rounded-pill text-primary px-4 mb-3">Glass Craft</div>
+                </div>*@
+                <div class="row g-4">
+                    @foreach (var item in Model)
+                    {
+
+                                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s" >
+                                            <div class="team-item" >
+                                                <h5>@Html.DisplayFor(modelItem => item.Handcraft)</h5>
+                                                <p class="mb-4">@Html.DisplayFor(modelItem => item.Descriptions)</p>
+                                                        <a asp-action="Product"><img class="img-fluid rounded-circle w-100 mb-4" src=@Url.Content("~/Images/"+item.ImagePath) asp-append-version="true" style="max-width:150px;max-height:150px;min-height:150px;min-width:150px"></a>
+                                                <h6> @Html.DisplayFor(modelItem => item.Price) JD</h6>
+                                            <div class="d-flex justify-content-center">
+                                                            <input type="submit" class="btn btn-outline-success" style="background-color:white" value="🛒" onclick = "AddCarts(@item.HandId)"/> 
+                                                                 <h5>&nbsp;</h5>
+                                                      <input type="submit" class="btn btn-outline-success" style="background-color:white" name="HandId" value="⭐" onclick="favCarts(@item.HandId)" />
+
+                                            </div>
+                                        </div>
+                                    </div>
+                        @*     <a asp-action="Edit" asp-route-id="@item.HandId">Edit</a>
+                        <a asp-action="Details" asp-route-id = "@item.HandId">Details</a>
+                        <a asp-action="Delete" asp-route-id="@item.HandId">Delete</a>
+*@
+                    }     
+
+                <div class="hotel py-2 px-2 pb-4 border-bottom"> 
+             </div>
+          </div>
+      </div>
+     </div>
+   </div>
+  </div>
+
+
+
+
+
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+ <script> type="text/javascript" href="http://code.jquery.com/jquery-1.10.2.js%22%3E" </script>
+
+
+    <script>
+        function AddCarts(HandId) {
+
+            let id = HandId;
+            console.log(id);
+            $.ajax({
+                url: "/HandcraftFps/AddCart",
+                type: "POST",
+                data: { HandId: id },
+                success: function (data) {
+
+                 if(data==0)
+                 {
+                     Swal.fire({
+                      title: 'Are you sure?',
+                      text: "you must be logged in!",
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#00B98E',
+                      cancelButtonColor: '#b90000',
+                      confirmButtonText: 'Yes, GO Login'
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                            window.location.href ="/Login/Loginuser";
+                      }
+                    })
+
+                 }
+                 else{
+                     console.log(data);
+                     Swal.fire(
+                      'Added successfully!',
+                      'You clicked the button!',
+                      'success'
+                    )
+
+                    }
+
+
+
+                }
+            })
+        }
+        </script>
+         <script>
+        function favCarts(HandId) {
+
+            let id = HandId;
+            console.log(id);
+            $.ajax({
+                url: "/HandcraftFps/favCart",
+                type: "POST",
+                data: { HandId: id },
+                success: function (data) {
+
+                 if(data==0)
+                 {
+                     Swal.fire({
+                      title: 'Are you sure?',
+                      text: "you must be logged in!",
+                      icon: 'warning',
+                      showCancelButton: true,
+                      confirmButtonColor: '#00B98E',
+                      cancelButtonColor: '#b90000',
+                      confirmButtonText: 'Yes, GO Login'
+                    }).then((result) => {
+                      if (result.isConfirmed) {
+                            window.location.href ="/Login/Loginuser";
+                      }
+                    })
+
+                 }
+                 else{
+                     console.log(data);
+                     Swal.fire(
+                      'Added successfully!',
+                      'You clicked the button!',
+                      'success'
+                    )
+
+                    }
+
+
+
+                }
+            })
+        }
+        </script>       

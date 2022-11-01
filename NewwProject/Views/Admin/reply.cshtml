@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewData["Title"] = "reply";
+    Layout = "~/Views/_admin.cshtml";
+}
+
+<hr />
+<br />
+<br />
+<div class="midde_cont"style="height:800px">
+                  <div class="container-fluid" style="height:800px">
+
+                     <!-- row -->
+                     <div class="row"style="height :800px" >
+                        <!-- table section -->
+                        <div class="col-md-12"style="height:800px">
+                           
+                              <div class="full inbox_inner_section">
+                                 <div class="row">
+                                    <div class="col-md-12">
+                                        
+                                                   
+                                                   <div class="container-xxl py-6">
+            <div class="container">
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 wow fadeInUp" data-wow-delay="0.1s">
+                        <form asp-action="reply" autocomplete="off">
+                             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                             
+
+                            <div class="row g-3 col-md-12">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                         <label name="" class="control-label"> Subject </label><br /><br />
+                                         <input type="text" name="EmailSubject" class="form-control" value="" />
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                       <label  class="control-label">Email Message</label><br /><br />
+                                        <input type="text" name="EmailMsg" class="form-control" value=""/>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <input type="submit" value="Send" style="width:100%" onclick="msg()" class="btn btn-success" />
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+                                                   <div class="container-xxl py-6">
+
+                                                </div>
+                                     
+
+
+                                      
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                        
+                      
+                         </div>
+                          </div>
+                           </div>
+
+                                   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+ <script> type="text/javascript" href="http://code.jquery.com/jquery-1.10.2.js%22%3E" </script>
+
+
+    <script>
+        function msg() {
+
+            Swal.fire(
+    'Done Successfully',
+  'We will reply as soon as possible!',
+  'success'
+)
+        }
+        </script>
+
+
+

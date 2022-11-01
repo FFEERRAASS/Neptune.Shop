@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Neptune</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+    <link rel="icon" href="~/Images/Icon-Small.png" type="image/png">
+      <!-- bootstrap css -->
+      <link rel="stylesheet"href="~/ADMIN/css/bootstrap.min.css" />
+      <!-- site css -->
+      <link rel="stylesheet" href="~/ADMIN/style.css" />
+      <!-- responsive css -->
+      <link rel="stylesheet"href="~/ADMIN/css/responsive.css" />
+      <!-- color css -->
+      <link rel="stylesheet"href="~/ADMIN/css/colors.css" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet"href="~/ADMIN/css/bootstrap-select.css" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet"href="~/ADMIN/css/perfect-scrollbar.css" />
+      <!-- custom css -->
+      <link rel="stylesheet"href="~/ADMIN/css/custom.css" />
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+          <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+   </head>
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+            <nav id="sidebar">
+               <div class="sidebar_blog_1">
+                  <div class="sidebar-header">
+                     <div class="logo_section">
+                        <a asp-action="Index"asp-controller="Admin"><img class="logo_icon img-responsive" src=@Url.Content("~/Images/"+@ViewBag.Image) alt="#" /></a>
+                     </div>
+                  </div>
+                  <div class="sidebar_user_info">
+                     <div class="icon_setting"></div>
+                     <div class="user_profle_side">
+                        <div class="user_img"><img class="img-responsive" src=@Url.Content("~/Images/"+@ViewBag.Image) asp-append-version="true" alt="#" /></div>
+                        <div class="user_info">
+                           <h6>@ViewBag.Firstn</h6>
+                           <p><span class="online_animation"></span> Online</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="sidebar_blog_2">
+
+                  <ul class="list-unstyled components">
+                     <li class="active">
+
+                        <a asp-action="Index" asp-controller="Admin"><i class="fa fa-dashboard yellow_color"></i> <span>Dashboard</span></a>
+
+                     </li>
+                     <li><a asp-action="Customer" asp-controller="Admin"><i class="fa fa-clock-o orange_color"></i> <span>Customer</span></a></li>
+                     <li>
+                        <a href="#element" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-diamond purple_color"></i> <span>Vendor</span></a>
+                        <ul class="collapse list-unstyled" id="element">
+                           <li><a asp-action="Vendor" asp-controller="Admin"> <span>Vendor</span></a></li>
+                           <li><a asp-action="VendorRequest" asp-controller="Admin"> <span>Vendor Request</span></a></li>
+
+                        </ul>
+
+                        <a asp-action="Product" asp-controller="Admin"><i class="fa fa-object-group blue2_color"></i> <span>Product</span></a>
+
+                     </li>
+
+                     
+                     <li>
+                        <a asp-action="fainance" asp-controller="Admin">
+                        <i class="fa fa-money green_color"></i> <span>Financial reports</span></a>
+                     </li>
+                     <li>
+                         <a href="#element1" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-send-o red_color"></i> <span>Contact</span></a>
+                         <ul class="collapse list-unstyled" id="element1">
+                           <li><a asp-action="contact"asp-controller="Admin">> <span>Contact Users</span></a></li>
+                           <li><a asp-action="contactV"asp-controller="Admin">> <span>Contact Vendors</span></a></li>
+                        </ul>
+                     </li>
+                     <li><a asp-action="Index" asp-controller="HomeFps"><i class="fa fa-home green_color"></i><span>Manage Home</span></a></li>
+                     <li><a asp-action="Index" asp-controller="CategoryFps"><i class="fa fa-tags orange_color2"></i><span>Category</span></a></li>
+                     <li><a asp-action="review" asp-controller="Admin"><i class="fa fa-comments-o green_color"></i><span>Testimonial</span></a></li>
+
+                     <li><a asp-action="unBlock" asp-controller="Admin"><i class="fa fa-users"></i><span>Users Block</span></a></li>
+                  </ul>
+               </div>
+            </nav>
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                        <button type="button" id="sidebarCollapse" class="sidebar_toggle"><i class="fa fa-bars"></i></button>
+                        <div class="logo_section">
+                        </div>
+                        <div class="right_topbar">
+                           <div class="icon_info">
+
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src=@Url.Content("~/Images/"+@ViewBag.Image) alt="#" /><span class="name_user">@ViewBag.Firstn</span></a>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" asp-action="Profile"asp-controller="Admin">My Profile</a>
+                                       <a class="dropdown-item"asp-action="logout"asp-controller="Admin"><span>Log Out</span> <i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </div>
+                  </nav>
+               </div>
+
+    <div>
+                    @RenderBody()
+    </div>
+ <!-- footer -->
+                  <div class="container-fluid">
+                     <div class="footer" >
+                        <p>Copyright © 2022 Designed by Feras Al-khuzai. All rights reserved.<br><br>
+                           Distributed By: <a asp-action="Primary" asp-controller="Home">Neptune</a>
+                        </p>
+                     </div>
+                  </div>
+               </div>
+               <!-- end dashboard inner -->
+            </div>
+         </div>
+
+      <!-- jQuery -->
+      <script src="~/ADMIN/js/jquery.min.js"></script>
+      <script src="~/ADMIN/js/popper.min.js"></script>
+      <script src="~/ADMIN/js/bootstrap.min.js"></script>
+      <!-- wow animation -->
+      <script src="~/ADMIN/js/animate.js"></script>
+      <!-- select country -->
+      <script src="~/ADMIN/js/bootstrap-select.js"></script>
+      <!-- owl carousel -->
+      <script src="~/ADMIN/js/owl.carousel.js"></script> 
+      <!-- chart js -->
+      <script src="~/ADMIN/js/Chart.min.js"></script>
+      <script src="~/ADMIN/js/Chart.bundle.min.js"></script>
+      <script src="~/ADMIN/js/utils.js"></script>
+      <script src="~/ADMIN/js/analyser.js"></script>
+      <!-- nice scrollbar -->
+      <script src="~/ADMIN/js/perfect-scrollbar.min.js"></script>
+      <script>
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="~/ADMIN/js/custom.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+      <script src="~/ADMIN/js/chart_custom_style1.js"></script>
+    
+   </body>
+</html>

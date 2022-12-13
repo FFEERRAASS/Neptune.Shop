@@ -292,7 +292,7 @@ namespace NewwProject.Controllers
         {
             var synthesizer = new SpeechSynthesizer();
             synthesizer.SetOutputToDefaultAudioDevice();
-            synthesizer.Speak("Bye Bye");
+            synthesizer.Speak("Welcome my Shop , Mohammad Obeidat");
             HttpContext.Session.Clear();
             return RedirectToAction(nameof(Index1));
         }

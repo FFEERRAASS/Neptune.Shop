@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using NewwProject.Models;
-
 using System.Diagnostics;
 using Aspose.Pdf;
 using System.IO;
@@ -181,6 +180,8 @@ namespace NewwProject.Controllers
         }
         public IActionResult CheckOut(string cart, string numbC, string datee, string cvv, OrdersFp orders,string total)
         {
+
+            // هون بتصير عملية الدفع + عملية انشاء الفاتورة بصيغة بي دي اف + ارسال الفاتورة عبر الأيميل
             
             var custId = HttpContext.Session.GetInt32("UserID");
             var email = HttpContext.Session.GetString("Email2");
